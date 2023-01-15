@@ -20,3 +20,13 @@ function layThongTinForm(){
     };
     return monAn;
 }
+
+  
+function showThongTin(monAn){
+    document.getElementById("maMon").value=monAn.maMon;
+    document.getElementById("tenMon").value=monAn.tenMon;
+    document.getElementById("giaMon").value=monAn.giaMon;
+    document.getElementById("hinhAnh").value=monAn.hinhMon;
+    document.getElementById("loaiMon").value=monAn.loaiMon ? 'Mặn' :'Chay';
+
+}

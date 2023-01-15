@@ -89,27 +89,33 @@ function suaMonAn(id){
         
     })
     .then(function(res){
-        console.log("🚀 ~ file: main.js:92 ~ .then ~ res", res)
         tatLoading();
-        
+       showThongTin(res.data);
     })
     .catch(function(err){
-        console.log("🚀 ~ file: main.js:97 ~ suaMonAn ~ err", err)
         tatLoading();   
+        console.log("🚀 ~ file: main.js:97 ~ suaMonAn ~ err", err)
     })
 }
 
 function capNhat(){
+    batLoading();
     var monAn =layThongTinForm();
 
     axios({
         url:`${BASE_URL}/food/${monAn.maMon}`,
         method:"PUT",
-        data:monAn,
+        data: monAn,
     })
     .then(function(res){
+        tatLoading();
         fetchFoodList();
+       
+
+
     })
     .catch(function(err){
+        tatLoading();
+        console.log("🚀 ~ file: main.js:111 ~ capNhatMonAn ~ err", err)
    })
 }
